@@ -1,17 +1,3 @@
-terraform {
-  required_providers {
-    solacebroker = {
-      source  = "registry.terraform.io/solaceproducts/solacebroker"
-    }
-  }
-}
-
-# Configure the provider
-provider "solacebroker" {
-  username = var.solace_broker_username
-  password = var.solace_broker_password
-  url      = var.solace_broker_url
-}
 
 resource "solacebroker_msg_vpn_acl_profile" "acl_profiles" {
   for_each                      = { for profile in var.acl_profiles : profile.name => profile }
