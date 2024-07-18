@@ -1,4 +1,10 @@
-# main.tf
+terraform {
+  required_providers {
+    solacebroker = {
+      source  = "registry.terraform.io/solaceproducts/solacebroker"
+    }
+  }
+}
 
 # Configure the provider
 provider "solacebroker" {
